@@ -1,0 +1,41 @@
+Este proyecto tiene como objetivo analizar registros incorrectos de servidores web, identificando patrones en el tráfico y comportamiento de las solicitudes mediante expresiones regulares. Usamos Python y las librerías re, json y matplotlib para procesar los datos y generar visualizaciones que simplifiquen su interpretación.
+
+El repositorio en cuestión, llamado mal2csv, convierte los registros de texto de los servidores a formato CSV, lo que facilita el análisis. De esta manera, se busca obtener información clave sobre métodos HTTP, direcciones IP y tendencias recurrentes en el tráfico de los servidores.
+
+Proceso realizado:
+Lectura de registros:
+Los registros de los servidores contienen información como direcciones IP, métodos HTTP (por ejemplo, GET o POST) y marcas de tiempo. El análisis inició trabajando con un archivo de log desorganizado, transformando las entradas de texto plano en un formato más estructurado, como JSON.
+
+Extracción de datos mediante patrones:
+Se usaron expresiones regulares para identificar y extraer información relevante:
+
+Direcciones IP: Localizan las IPs siguiendo el formato tradicional (cuatro bloques numéricos separados por puntos, como 192.168.0.1).
+Fechas y horas: Identifican marcas de tiempo en un formato típico como 12/Mar/2024:13:44:55.
+Métodos HTTP: Detectan los métodos de solicitud, como GET, POST, PUT y DELETE.
+Almacenamiento estructurado:
+Una vez procesados, los datos se guardaron en formato JSON, permitiendo un acceso sencillo y reutilizable para futuros análisis.
+
+Visualización de patrones:
+Se generaron gráficos con matplotlib para facilitar la interpretación de los datos:
+
+Distribución de métodos HTTP: Un gráfico de barras muestra la frecuencia de cada método en las solicitudes.
+Actividad por dirección IP: Otro gráfico visualiza cuántas veces cada IP accedió al servidor, ayudando a identificar comportamientos sospechosos.
+Uso de expresiones regulares:
+Las expresiones regulares son herramientas esenciales para identificar patrones dentro de los registros de texto. En este análisis se aplicaron para:
+
+Detectar direcciones IP y analizar las ubicaciones de los usuarios.
+Extraer marcas de tiempo para observar tendencias de tráfico.
+Filtrar métodos HTTP para entender las interacciones predominantes (por ejemplo, solicitudes GET o POST).
+Representaciones gráficas:
+Métodos HTTP:
+Los métodos HTTP permiten realizar distintas acciones en un servidor. Algunos de los más comunes son:
+
+GET: Solicitar recursos, como páginas web o imágenes.
+POST: Enviar datos al servidor, como formularios.
+Los gráficos destacan qué métodos son los más usados, revelando cómo interactúan los usuarios con el servidor. Por lo general, las solicitudes GET predominan.
+
+Frecuencia de accesos por IP:
+Cada dirección IP muestra la cantidad de conexiones realizadas en un periodo determinado. Este análisis es útil para identificar patrones anómalos, como:
+
+Ataques DoS: Múltiples solicitudes rápidas desde una misma IP.
+Actividad de bots: Conexiones repetitivas automatizadas.
